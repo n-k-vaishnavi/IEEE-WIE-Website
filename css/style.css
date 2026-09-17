@@ -1,0 +1,350 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar {
+    background-color: #ffffff;
+    padding: 18px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #8b1e5b;
+}
+
+.navbar-brand:hover {
+    color: #8b1e5b;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.nav-link:hover {
+    color: #8b1e5b;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: #2b1725;
+    color: white;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.primary-button {
+    background-color: #ffffff;
+    color: #8b1e5b;
+}
+
+.primary-button:hover {
+    background-color: #f2f2f2;
+    color: #8b1e5b;
+}
+
+.secondary-button {
+    border: 1px solid #8b1e5b;
+    color: #8b1e5b;
+    background-color: transparent;
+}
+
+.secondary-button:hover {
+    background-color: #8b1e5b;
+    color: white;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section {
+    padding: 90px 0;
+}
+
+.section-light {
+    background-color: #f8f7f8;
+}
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-label {
+    color: #8b1e5b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.section-text {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+
+/* =========================
+   ABOUT PLACEHOLDER
+========================= */
+
+.about-placeholder {
+    height: 350px;
+    background-color: #e7e3e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.feature-card {
+    background-color: white;
+    padding: 35px;
+    height: 100%;
+    border: 1px solid #eeeeee;
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #8b1e5b;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   EVENT CARDS
+========================= */
+
+.event-card {
+    background-color: white;
+    border: 1px solid #eeeeee;
+    height: 100%;
+    overflow: hidden;
+}
+
+.event-image {
+    height: 220px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+.event-content {
+    padding: 25px;
+}
+
+.event-date {
+    color: #8b1e5b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.event-content h3 {
+    margin: 10px 0;
+}
+
+
+/* =========================
+   MEMBER CARDS
+========================= */
+
+.member-card {
+    text-align: center;
+    background-color: white;
+    padding-bottom: 25px;
+}
+
+.member-image {
+    height: 300px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.member-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.member-card p {
+    color: #777;
+}
+
+
+/* =========================
+   CENTER BUTTON
+========================= */
+
+.center-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta-section {
+    padding: 100px 20px;
+    background-color: #8b1e5b;
+    color: white;
+}
+
+.cta-section .section-label {
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 60px 0 25px;
+}
+
+.footer h3 {
+    margin-bottom: 15px;
+}
+
+.footer p {
+    color: #bbb;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #d88ab0;
+}
+
+.footer hr {
+    border-color: #444;
+    margin: 35px 0 20px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        min-height: 70vh;
+    }
+
+    .hero-section h1 {
+        font-size: 2.7rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+        margin-top: 25px;
+    }
+
+}
