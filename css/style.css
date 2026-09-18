@@ -46,7 +46,8 @@ body {
     margin-left: 20px;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: #8b1e5b;
 }
 
@@ -299,6 +300,7 @@ body {
     display: flex;
     justify-content: flex-end;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -321,7 +323,188 @@ body {
 
 
 /* =========================
-   MOBILE
+   TEAM HERO
+========================= */
+
+.team-hero {
+    padding: 70px 0;
+    background: linear-gradient(
+        135deg,
+        #f3edff,
+        #ffffff,
+        #eee5ff
+    );
+}
+
+.team-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.team-title {
+    flex: 1;
+    text-align: center;
+}
+
+.team-title h1 {
+    color: #4b197d;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.team-title p:not(.section-label) {
+    max-width: 650px;
+    margin: auto;
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.team-logo {
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-logo img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+
+/* =========================
+   TEAM SECTIONS
+========================= */
+
+.team-section {
+    background-color: #ffffff;
+}
+
+.execom-section {
+    background-color: #faf7ff;
+}
+
+
+/* =========================
+   TEAM MEMBER CARD
+========================= */
+
+.team-member-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 12px 12px 24px;
+    text-align: center;
+    height: 100%;
+
+    box-shadow:
+        0 8px 25px rgba(75, 25, 125, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 14px 32px rgba(75, 25, 125, 0.20);
+}
+
+
+/* =========================
+   PHOTO FRAME
+========================= */
+
+/*
+   The frame does NOT have a fixed height.
+   Each image keeps its original proportions.
+   This prevents cropping.
+*/
+
+.member-photo {
+    width: 100%;
+    background-color: #f3eff8;
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 17px;
+}
+
+.member-photo img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   MEMBER TEXT
+========================= */
+
+.team-member-card h3 {
+    color: #42176e;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.team-member-card p {
+    color: #666666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   TEAM MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .team-hero {
+        padding: 50px 0;
+    }
+
+    .team-hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .team-logo {
+        width: 150px;
+    }
+
+    .team-logo img {
+        max-height: 90px;
+    }
+
+    .team-title h1 {
+        font-size: 2.3rem;
+    }
+
+    .team-title p:not(.section-label) {
+        font-size: 0.95rem;
+    }
+
+}
+
+
+/* =========================
+   GENERAL MOBILE
 ========================= */
 
 @media (max-width: 768px) {
