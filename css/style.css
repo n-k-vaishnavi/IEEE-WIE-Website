@@ -46,7 +46,8 @@ body {
     margin-left: 20px;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: #8b1e5b;
 }
 
@@ -304,6 +305,7 @@ body {
     display: flex;
     justify-content: flex-end;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -325,11 +327,486 @@ body {
 }
 
 
+/* ==================================================
+   TEAM PAGE
+================================================== */
+
+
 /* =========================
-   MOBILE
+   TEAM HERO
 ========================= */
 
+.team-hero {
+    padding: 70px 0;
+    background: linear-gradient(
+        135deg,
+        #f3edff,
+        #ffffff,
+        #eee5ff
+    );
+}
+
+.team-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.team-title {
+    flex: 1;
+    text-align: center;
+}
+
+.team-title h1 {
+    color: #4b197d;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.team-title p:not(.section-label) {
+    max-width: 650px;
+    margin: auto;
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.team-logo {
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-logo img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+
+/* =========================
+   TEAM SECTIONS
+========================= */
+
+.team-section {
+    background-color: #ffffff;
+}
+
+.execom-section {
+    background-color: #faf7ff;
+}
+
+
+/* =========================
+   TEAM MEMBER CARD
+========================= */
+
+.team-member-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 12px 12px 24px;
+    text-align: center;
+    height: 100%;
+
+    box-shadow:
+        0 8px 25px rgba(75, 25, 125, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 14px 32px rgba(75, 25, 125, 0.20);
+}
+
+
+/* =========================
+   TEAM PHOTOS
+========================= */
+
+.member-photo {
+    width: 100%;
+
+    background-color: #f3eff8;
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 17px;
+}
+
+.member-photo img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   TEAM TEXT
+========================= */
+
+.team-member-card h3 {
+    color: #42176e;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.team-member-card p {
+    color: #666666;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+
+/* ==================================================
+   EVENTS PAGE
+================================================== */
+
+
+/* =========================
+   EVENTS HERO
+========================= */
+
+.events-hero {
+    padding: 90px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #f3edff,
+        #ffffff,
+        #eee5ff
+    );
+
+    text-align: center;
+}
+
+.events-hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.events-hero h1 {
+    color: #4b197d;
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.events-hero p:not(.section-label) {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+/* =========================
+   EVENTS SECTION
+========================= */
+
+.events-section {
+    background-color: #ffffff;
+}
+
+
+/* =========================
+   EVENT PAGE CARD
+========================= */
+
+.event-page-card {
+    background-color: #ffffff;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(75, 25, 125, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.event-page-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 16px 35px rgba(75, 25, 125, 0.20);
+}
+
+
+/* =========================
+   EVENT IMAGE
+========================= */
+
+.event-page-image {
+    width: 100%;
+    min-height: 280px;
+
+    background-color: #f3eff8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-placeholder {
+    text-align: center;
+    color: #4b197d;
+}
+
+.event-placeholder span {
+    display: block;
+
+    font-size: 2.2rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.event-placeholder small {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #888;
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   EVENT CONTENT
+========================= */
+
+.event-page-content {
+    padding: 30px;
+}
+
+.event-status {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    background-color: #f1e7ff;
+    color: #6a27a3;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+}
+
+.event-page-date {
+    color: #8b1e5b;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+}
+
+.event-page-content h3 {
+    color: #42176e;
+
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+.event-page-content > p {
+    color: #666;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   EVENT INFORMATION
+========================= */
+
+.event-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+
+    margin-bottom: 25px;
+}
+
+.event-info div {
+    color: #666;
+
+    font-size: 0.9rem;
+}
+
+.event-info strong {
+    color: #42176e;
+}
+
+
+/* =========================
+   EVENT BUTTON
+========================= */
+
+.event-button {
+    display: inline-block;
+
+    padding: 11px 22px;
+
+    border-radius: 6px;
+
+    background-color: #8b1e5b;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.event-button:hover {
+    background-color: #6f1749;
+    color: #ffffff;
+}
+
+
+/* =========================
+   PAST EVENTS
+========================= */
+
+.past-events-section {
+    background-color: #faf7ff;
+}
+
+.empty-events {
+    max-width: 650px;
+    margin: auto;
+
+    text-align: center;
+
+    padding: 55px 30px;
+
+    background-color: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(75, 25, 125, 0.08);
+}
+
+.empty-events-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f1e7ff;
+    color: #6a27a3;
+
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.empty-events h3 {
+    color: #42176e;
+
+    font-size: 1.3rem;
+
+    margin-bottom: 10px;
+}
+
+.empty-events p {
+    color: #777;
+
+    margin: 0;
+}
+
+
+/* =========================
+   EVENTS CTA
+========================= */
+
+.events-cta {
+    padding: 90px 20px;
+
+    background-color: #8b1e5b;
+
+    color: #ffffff;
+}
+
+.events-cta .section-label {
+    color: #ffffff;
+}
+
+.events-cta h2 {
+    font-size: 2.7rem;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.events-cta p:not(.section-label) {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    color: #f5dce9;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
 @media (max-width: 768px) {
+
+    /* NAVBAR */
+
+    .nav-link {
+        margin-left: 0;
+    }
+
+
+    /* GENERAL */
 
     .hero-section {
         min-height: 70vh;
@@ -346,6 +823,72 @@ body {
     .section-heading h2 {
         font-size: 2rem;
     }
+
+
+    /* TEAM */
+
+    .team-hero {
+        padding: 50px 0;
+    }
+
+    .team-hero-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .team-logo {
+        width: 150px;
+    }
+
+    .team-logo img {
+        max-height: 90px;
+    }
+
+    .team-title h1 {
+        font-size: 2.3rem;
+    }
+
+    .team-title p:not(.section-label) {
+        font-size: 0.95rem;
+    }
+
+
+    /* EVENTS */
+
+    .events-hero {
+        padding: 60px 20px;
+    }
+
+    .events-hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .events-hero p:not(.section-label) {
+        font-size: 0.95rem;
+    }
+
+    .event-page-image {
+        min-height: 220px;
+    }
+
+    .event-placeholder span {
+        font-size: 1.8rem;
+    }
+
+    .event-page-content {
+        padding: 25px 20px;
+    }
+
+    .event-info {
+        grid-template-columns: 1fr;
+    }
+
+    .events-cta h2 {
+        font-size: 2.2rem;
+    }
+
+
+    /* FOOTER */
 
     .footer-links {
         justify-content: flex-start;
