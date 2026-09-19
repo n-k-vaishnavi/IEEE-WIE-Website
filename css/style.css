@@ -1,8 +1,55 @@
-/* =========================
-   BASIC RESET
-========================= */
+/* ==========================================================================
+   IEEE WIE JSSATEB - Official Website Stylesheet
+   Modern, Accessible, and Responsive Design System
+   ========================================================================== */
 
-* {
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ==================================================
+   DESIGN TOKENS & CSS VARIABLES
+================================================== */
+:root {
+    /* Brand Color Palette */
+    --primary: #4b197d;          /* Royal IEEE WIE Purple */
+    --primary-dark: #330f57;     /* Deep Night Purple */
+    --primary-light: #6a2ca6;    /* Soft Lavender Violet */
+    --accent: #8b1e5b;           /* WIE Berry / Magenta */
+    --accent-hover: #711448;     /* Darker Berry */
+    --accent-glow: rgba(139, 30, 91, 0.25);
+    --lavender-bg: #faf7fd;      /* Light Lavender Tint */
+    --lavender-subtle: #f3ecfb;  /* Lavender Card Accent */
+    --lavender-border: #ebdff5;  /* Subtle Card Border */
+
+    /* Neutrals */
+    --bg-white: #ffffff;
+    --text-main: #231f29;
+    --text-muted: #676170;
+    --text-light: #9a93a5;
+    --border-color: #eee9f4;
+    --dark-bg: #1a0b26;          /* Footer / Dark Section Background */
+
+    /* Typography */
+    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(75, 25, 125, 0.05);
+    --shadow-md: 0 8px 24px rgba(75, 25, 125, 0.08);
+    --shadow-lg: 0 16px 36px rgba(75, 25, 125, 0.14);
+    --shadow-hover: 0 20px 42px rgba(75, 25, 125, 0.18);
+
+    /* Transitions & Radii */
+    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+}
+
+/* ==================================================
+   GLOBAL RESET & BASE STYLES
+================================================== */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,344 +60,696 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #222;
-    background-color: #ffffff;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--bg-white);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
-
-/* =========================
-   NAVBAR
-========================= */
-
-.custom-navbar {
-    background-color: #ffffff;
-    padding: 18px 0;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
     font-weight: 700;
-    color: #8b1e5b;
+    line-height: 1.25;
+    color: var(--primary-dark);
 }
 
-.navbar-brand:hover {
-    color: #8b1e5b;
+a {
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-.nav-link {
-    color: #333;
-    font-weight: 500;
-    margin-left: 20px;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: #8b1e5b;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero-section {
-    padding: 90px 0;
-    display: flex;
-    align-items: center;
-    background-color: #2b1725;
-    color: white;
-}
-.hero-image {
-    max-width: 350px;
-    width: 100%;
+img {
+    max-width: 100%;
     height: auto;
 }
 
-
-/* =========================
-   BUTTONS
-========================= */
-
-.primary-button,
-.secondary-button {
-    display: inline-block;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: 0.3s ease;
+/* ==================================================
+   NAVBAR & TOP-RIGHT LOGOS
+================================================== */
+.custom-navbar {
+    background-color: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--lavender-border);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    transition: var(--transition);
 }
 
+.custom-navbar.scrolled {
+    box-shadow: var(--shadow-md);
+    padding: 10px 0;
+}
+
+/* Brand styling */
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+    padding: 0;
+}
+
+.navbar-brand span {
+    color: var(--accent);
+}
+
+.navbar-brand:hover {
+    color: var(--accent);
+}
+
+/* Navigation links */
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4b4554 !important;
+    margin: 0 10px;
+    padding: 8px 12px !important;
+    border-radius: var(--radius-sm);
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--accent) !important;
+    background-color: var(--lavender-bg);
+}
+
+.nav-link.active {
+    color: var(--accent) !important;
+    background-color: var(--lavender-subtle);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    border-radius: 2px;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: 1px solid var(--lavender-border);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Top-Right Dual Logos Container */
+.navbar-right-logos {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 24px;
+    padding-left: 20px;
+    border-left: 1px solid var(--lavender-border);
+}
+
+.nav-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.nav-logo-item:hover {
+    transform: translateY(-2px);
+}
+
+.nav-logo-wie {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-logo-jss {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Mobile top-right logos (visible on smaller screens next to toggler) */
+.mobile-top-logos {
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-top-logos img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ==================================================
+   BUTTONS
+================================================== */
 .primary-button {
-    background-color: #ffffff;
-    color: #8b1e5b;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 28px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, #ffffff 0%, #fdf2f7 100%);
+    color: var(--accent);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: var(--transition);
 }
 
 .primary-button:hover {
-    background-color: #f2f2f2;
-    color: #8b1e5b;
+    background: #ffffff;
+    color: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button-accent {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.primary-button-accent:hover {
+    background: linear-gradient(135deg, var(--accent-hover) 0%, var(--primary-dark) 100%);
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(139, 30, 91, 0.4);
 }
 
 .secondary-button {
-    border: 1px solid #8b1e5b;
-    color: #8b1e5b;
-    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 26px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    transition: var(--transition);
 }
 
 .secondary-button:hover {
-    background-color: #8b1e5b;
-    color: white;
+    background-color: var(--accent);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px var(--accent-glow);
+}
+
+.center-button {
+    text-align: center;
+    margin-top: 45px;
+}
+
+/* ==================================================
+   HERO SECTIONS
+================================================== */
+.hero-section {
+    position: relative;
+    padding: 100px 0 90px;
+    background: radial-gradient(circle at 85% 25%, rgba(139, 30, 91, 0.35) 0%, rgba(35, 12, 51, 0) 55%),
+                linear-gradient(140deg, #1e092b 0%, #3a135a 50%, #170722 100%);
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(106, 44, 166, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
 
+.hero-small-text {
+    color: #f7bbd8;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero-section h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+}
+
+.hero-description {
+    font-size: 1.12rem;
+    color: #eeddf2;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 580px;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 380px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.35));
+    transition: var(--transition);
+}
+
+.hero-image:hover {
+    transform: scale(1.03);
+}
+
+/* ==================================================
+   SECTION HEADINGS & GENERAL LAYOUT
+================================================== */
 .section {
-    padding: 90px 0;
+    padding: 95px 0;
 }
 
 .section-light {
-    background-color: #f8f7f8;
+    background-color: var(--lavender-bg);
 }
 
 .section-heading {
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 }
 
 .section-label {
-    color: #8b1e5b;
+    display: inline-block;
+    color: var(--accent);
+    font-family: var(--font-heading);
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2px;
+    text-transform: uppercase;
     margin-bottom: 10px;
+    position: relative;
 }
 
 .section-heading h2 {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
 }
 
 .section-text {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
     margin-bottom: 20px;
-    color: #555;
 }
 
-
-/* =========================
-   ABOUT PLACEHOLDER
-========================= */
-
-.about-placeholder {
-    height: 350px;
-    background-color: #e7e3e6;
+/* Chapter Showcase Card (replaces Chapter Image placeholder) */
+.about-showcase-card {
+    background: linear-gradient(145deg, #ffffff 0%, var(--lavender-subtle) 100%);
+    border: 1px solid var(--lavender-border);
+    border-radius: var(--radius-lg);
+    padding: 40px 30px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    color: #777;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.about-showcase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.about-showcase-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+
 }
 
 
-/* =========================
-   FEATURE CARDS
-========================= */
 
+/* ==================================================
+   FEATURE CARDS
+================================================== */
 .feature-card {
-    background-color: white;
-    padding: 35px;
+    background-color: var(--bg-white);
+    padding: 38px 32px;
     height: 100%;
-    border: 1px solid #eeeeee;
-    transition: 0.3s ease;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, var(--accent), var(--primary));
+    transition: var(--transition);
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--lavender-border);
+}
+
+.feature-card:hover::before {
+    height: 100%;
 }
 
 .feature-icon {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #8b1e5b;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--lavender-subtle);
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
     margin-bottom: 20px;
 }
 
 .feature-card h3 {
-    margin-bottom: 15px;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    color: var(--primary-dark);
 }
 
-
-/* =========================
-   EVENT CARDS
-========================= */
-
-.event-card {
-    background-color: white;
-    border: 1px solid #eeeeee;
-    height: 100%;
-    overflow: hidden;
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 0;
 }
-
-.event-image {
-    height: 220px;
-    background-color: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
-}
-
-.event-content {
-    padding: 25px;
-}
-
-.event-date {
-    color: #8b1e5b;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.event-content h3 {
-    margin: 10px 0;
-}
-
-
-/* =========================
-   MEMBER CARDS
-========================= */
-
-.member-card {
-    text-align: center;
-    background-color: white;
-    padding-bottom: 25px;
-}
-
-.member-image {
-    height: 300px;
-    background-color: #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-.member-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.member-card p {
-    color: #777;
-}
-
-
-/* =========================
-   CENTER BUTTON
-========================= */
-
-.center-button {
-    text-align: center;
-    margin-top: 40px;
-}
-
-
-/* =========================
-   CTA
-========================= */
-
-.cta-section {
-    padding: 100px 20px;
-    background-color: #8b1e5b;
-    color: white;
-}
-
-.cta-section .section-label {
-    color: white;
-}
-
-.cta-section h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-}
-
-.cta-section p {
-    margin-bottom: 25px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    background-color: #1f1f1f;
-    color: white;
-    padding: 60px 0 25px;
-}
-
-.footer h3 {
-    margin-bottom: 15px;
-}
-
-.footer p {
-    color: #bbb;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: flex-end;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    color: #d88ab0;
-}
-
-.footer hr {
-    border-color: #444;
-    margin: 35px 0 20px;
-}
-
-.copyright {
-    font-size: 0.85rem;
-}
-
 
 /* ==================================================
-   TEAM PAGE
+   EVENT CARDS (Home & Events Page)
 ================================================== */
+.event-page-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
+.event-page-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
 
-/* =========================
-   TEAM HERO
-========================= */
+.event-page-image {
+    width: 100%;
+    min-height: 250px;
+    background: linear-gradient(135deg, #f7f2fc 0%, #ebe0f6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
 
+.event-placeholder {
+    text-align: center;
+    color: var(--primary);
+    padding: 30px 20px;
+}
+
+.event-placeholder span {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--primary);
+}
+
+.event-placeholder small {
+    display: block;
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+.event-page-content {
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-status {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 5px 14px;
+    border-radius: var(--radius-full);
+    background-color: #f1e7ff;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.event-page-date {
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.event-page-content h3 {
+    color: var(--primary-dark);
+    font-size: 1.65rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.event-page-content > p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
+}
+
+.event-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 16px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 26px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.event-info strong {
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.event-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 24px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.92rem;
+    transition: var(--transition);
+    align-self: flex-start;
+}
+
+.event-button:hover {
+    background: linear-gradient(135deg, var(--accent-hover) 0%, var(--primary-dark) 100%);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--accent-glow);
+}
+
+/* Past Events Empty Box */
+.empty-events {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 55px 35px;
+    background-color: #ffffff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--lavender-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.empty-events-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lavender-subtle);
+    color: var(--primary);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.empty-events h3 {
+    color: var(--primary);
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+}
+
+.empty-events p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Events Hero */
+.events-hero {
+    padding: 85px 20px;
+    background: radial-gradient(circle at 75% 20%, rgba(139, 30, 91, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, #f7f1fc 0%, #ffffff 50%, #f3ebfa 100%);
+    text-align: center;
+    border-bottom: 1px solid var(--lavender-border);
+}
+
+.events-hero-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.events-hero h1 {
+    color: var(--primary-dark);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.events-hero p:not(.section-label) {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0 auto;
+}
+
+/* Events CTA */
+.events-cta, .cta-section {
+    padding: 90px 20px;
+    background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    color: #ffffff;
+    text-align: center;
+}
+
+.events-cta .section-label, .cta-section .section-label {
+    color: #ffd8ec;
+}
+
+.events-cta h2, .cta-section h2 {
+    color: #ffffff;
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.events-cta p:not(.section-label), .cta-section p:not(.section-label) {
+    max-width: 640px;
+    margin: 0 auto 30px;
+    color: #f7e1ee;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+/* ==================================================
+   TEAM PAGE & MEMBER CARDS
+================================================== */
 .team-hero {
     padding: 70px 0;
-    background: linear-gradient(
-        135deg,
-        #f3edff,
-        #ffffff,
-        #eee5ff
-    );
+    background: radial-gradient(circle at 80% 30%, rgba(139, 30, 91, 0.12) 0%, transparent 50%),
+                linear-gradient(135deg, #f6f0fd 0%, #ffffff 50%, #f1e6fa 100%);
+    border-bottom: 1px solid var(--lavender-border);
 }
 
 .team-hero-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 35px;
+    gap: 30px;
 }
 
 .team-title {
@@ -359,22 +758,24 @@ body {
 }
 
 .team-title h1 {
-    color: #4b197d;
-    font-size: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 18px;
+    color: var(--primary-dark);
+    font-size: 3.1rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
 }
 
 .team-title p:not(.section-label) {
-    max-width: 650px;
-    margin: auto;
-    color: #666;
+    max-width: 640px;
+    margin: 0 auto;
+    color: var(--text-muted);
     font-size: 1.05rem;
     line-height: 1.7;
 }
 
 .team-logo {
-    width: 190px;
+    width: 180px;
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -382,451 +783,379 @@ body {
 
 .team-logo img {
     max-width: 100%;
-    max-height: 120px;
+    max-height: 110px;
     object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(75, 25, 125, 0.12));
 }
 
+.team-logo-right {
+    width: 150px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* =========================
-   TEAM SECTIONS
-========================= */
+.team-logo-right img {
+    width: 150px;
+    height: 150px;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(75, 25, 125, 0.12));
+}
 
 .team-section {
-    background-color: #ffffff;
+    background-color: var(--bg-white);
 }
 
 .execom-section {
-    background-color: #faf7ff;
+    background-color: var(--lavender-bg);
 }
 
-
-/* =========================
-   TEAM MEMBER CARD
-========================= */
-
+/* Team Member Card */
 .team-member-card {
-    background-color: #ffffff;
-    border-radius: 18px;
-    padding: 12px 12px 24px;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: 14px 14px 22px;
     text-align: center;
     height: 100%;
-
-    box-shadow:
-        0 8px 25px rgba(75, 25, 125, 0.12);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
 .team-member-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 14px 32px rgba(75, 25, 125, 0.20);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--lavender-border);
 }
-
-
-/* =========================
-   TEAM PHOTOS
-========================= */
 
 .member-photo {
     width: 100%;
-
+    height: 360px;
     background-color: #f3eff8;
-
     border-radius: 14px;
     overflow: hidden;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     margin-bottom: 17px;
 }
 
 .member-photo img {
     width: 100%;
-    height: auto;
-
-    display: block;
-
+    height: 100%;
     object-fit: contain;
+    display: block;
 }
 
-
-/* =========================
-   TEAM TEXT
-========================= */
+.team-member-card:hover .member-photo img {
+    transform: scale(1.04);
+}
 
 .team-member-card h3 {
-    color: #42176e;
-    font-size: 1.05rem;
+    color: var(--primary-dark);
+    font-size: 1.12rem;
     font-weight: 700;
     margin-bottom: 6px;
 }
 
 .team-member-card p {
-    color: #666666;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
     margin: 0;
-    font-size: 0.95rem;
 }
 
-
-/* ==================================================
-   EVENTS PAGE
-================================================== */
-
-
-/* =========================
-   EVENTS HERO
-========================= */
-
-.events-hero {
-    padding: 90px 20px;
-
-    background: linear-gradient(
-        135deg,
-        #f3edff,
-        #ffffff,
-        #eee5ff
-    );
-
+/* Backward compatibility for index.html member cards */
+.member-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: 14px 14px 22px;
     text-align: center;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
 }
 
-.events-hero-content {
-    max-width: 800px;
-    margin: auto;
+.member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--lavender-border);
 }
 
-.events-hero h1 {
-    color: #4b197d;
-    font-size: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 18px;
-}
-
-.events-hero p:not(.section-label) {
-    color: #666;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    max-width: 700px;
-    margin: auto;
-}
-
-
-/* =========================
-   EVENTS SECTION
-========================= */
-
-.events-section {
-    background-color: #ffffff;
-}
-
-
-/* =========================
-   EVENT PAGE CARD
-========================= */
-
-.event-page-card {
-    background-color: #ffffff;
-
-    border-radius: 20px;
-    overflow: hidden;
-
-    box-shadow:
-        0 10px 30px rgba(75, 25, 125, 0.12);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.event-page-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 16px 35px rgba(75, 25, 125, 0.20);
-}
-
-
-/* =========================
-   EVENT IMAGE
-========================= */
-
-.event-page-image {
+.member-image {
     width: 100%;
-    min-height: 280px;
-
-    background-color: #f3eff8;
-
+    height: 310px;
+    background-color: var(--lavender-subtle);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 16px;
 }
 
-.event-placeholder {
-    text-align: center;
-    color: #4b197d;
-}
-
-.event-placeholder span {
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
     display: block;
+    transition: transform 0.4s ease;
+}
 
-    font-size: 2.2rem;
+.member-card:hover .member-image img {
+    transform: scale(1.04);
+}
+
+.member-card h3 {
+    color: var(--primary-dark);
+    font-size: 1.12rem;
     font-weight: 700;
-
-    letter-spacing: 2px;
+    margin-bottom: 6px;
 }
 
-.event-placeholder small {
-    display: block;
-
-    margin-top: 10px;
-
-    color: #888;
+.member-card p {
+    color: var(--text-muted);
     font-size: 0.9rem;
+    margin: 0;
 }
 
-
-/* =========================
-   EVENT CONTENT
-========================= */
-
-.event-page-content {
-    padding: 30px;
+/* ==================================================
+   CONTACT PAGE & SOCIAL CARDS
+================================================== */
+.contact-section {
+    background: radial-gradient(circle at 50% 0%, rgba(139, 30, 91, 0.05) 0%, transparent 60%),
+                var(--bg-white);
 }
 
-.event-status {
-    display: inline-block;
-
-    padding: 6px 14px;
-
-    border-radius: 20px;
-
-    background-color: #f1e7ff;
-    color: #6a27a3;
-
-    font-size: 0.75rem;
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 15px;
+.contact-social-card {
+    height: 100%;
+    padding: 45px 30px;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.event-page-date {
-    color: #8b1e5b;
-
-    font-size: 0.85rem;
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 8px;
+.contact-social-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--lavender-border);
 }
 
-.event-page-content h3 {
-    color: #42176e;
+.contact-social-icon {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--lavender-subtle) 0%, #ecdff8 100%);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 6px 18px rgba(75, 25, 125, 0.12);
+    transition: var(--transition);
+}
 
-    font-size: 1.8rem;
-    font-weight: 700;
+.contact-social-card:hover .contact-social-icon {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    color: #ffffff;
+    transform: scale(1.08);
+}
 
+.contact-social-card h3 {
+    color: var(--primary-dark);
+    font-size: 1.45rem;
+    font-weight: 800;
     margin-bottom: 12px;
 }
 
-.event-page-content > p {
-    color: #666;
+.contact-social-card p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    flex: 1;
+}
 
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 24px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    color: #ffffff !important;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.92rem;
+    border: none;
+    transition: var(--transition);
+}
+
+.contact-btn:hover {
+    background: linear-gradient(135deg, var(--accent-hover) 0%, var(--primary-dark) 100%);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px var(--accent-glow);
+}
+
+.bangalore-logo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.08));
+}
+
+/* ==================================================
+   FOOTER (UNIFIED ACROSS ALL PAGES)
+================================================== */
+.footer {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    padding: 70px 0 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer h3 {
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.footer p {
+    color: #b7adc4;
+    font-size: 0.95rem;
     line-height: 1.7;
-
-    margin-bottom: 25px;
+    margin-bottom: 14px;
 }
 
-
-/* =========================
-   EVENT INFORMATION
-========================= */
-
-.event-info {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 15px;
-
-    padding: 18px 0;
-
-    border-top: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee;
-
-    margin-bottom: 25px;
+.footer-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 20px;
 }
 
-.event-info div {
-    color: #666;
-
-    font-size: 0.9rem;
-}
-
-.event-info strong {
-    color: #42176e;
-}
-
-
-/* =========================
-   EVENT BUTTON
-========================= */
-
-.event-button {
-    display: inline-block;
-
-    padding: 11px 22px;
-
-    border-radius: 6px;
-
-    background-color: #8b1e5b;
-    color: #ffffff;
-
-    text-decoration: none;
-
+.footer-nav-links a {
+    color: #d1c8de;
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
     font-weight: 600;
-
-    transition: 0.3s ease;
+    transition: var(--transition);
 }
 
-.event-button:hover {
-    background-color: #6f1749;
-    color: #ffffff;
+.footer-nav-links a:hover {
+    color: #ffb8da;
+    transform: translateX(2px);
 }
 
-
-/* =========================
-   PAST EVENTS
-========================= */
-
-.past-events-section {
-    background-color: #faf7ff;
+.footer-social-links {
+    display: flex;
+    gap: 12px;
 }
 
-.empty-events {
-    max-width: 650px;
-    margin: auto;
-
-    text-align: center;
-
-    padding: 55px 30px;
-
-    background-color: #ffffff;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 8px 25px rgba(75, 25, 125, 0.08);
-}
-
-.empty-events-icon {
-    width: 55px;
-    height: 55px;
-
-    margin: 0 auto 20px;
-
+.footer-social-links a {
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: #f1e7ff;
-    color: #6a27a3;
-
-    font-size: 2rem;
-    font-weight: 300;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 18px;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.empty-events h3 {
-    color: #42176e;
-
-    font-size: 1.3rem;
-
-    margin-bottom: 10px;
+.footer-social-links a:hover {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(139, 30, 91, 0.4);
+    border-color: transparent;
 }
 
-.empty-events p {
-    color: #777;
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.12);
+    margin: 40px 0 25px;
+}
 
+.copyright {
+    color: #8c8399;
+    font-size: 0.88rem;
     margin: 0;
 }
 
-
-/* =========================
-   EVENTS CTA
-========================= */
-
-.events-cta {
-    padding: 90px 20px;
-
-    background-color: #8b1e5b;
-
-    color: #ffffff;
-}
-
-.events-cta .section-label {
-    color: #ffffff;
-}
-
-.events-cta h2 {
-    font-size: 2.7rem;
-    font-weight: 700;
-
-    margin-bottom: 15px;
-}
-
-.events-cta p:not(.section-label) {
-    max-width: 650px;
-
-    margin: 0 auto 25px;
-
-    color: #f5dce9;
-}
-
-
 /* ==================================================
-   MOBILE
+   RESPONSIVE BREAKPOINTS
 ================================================== */
-
-@media (max-width: 768px) {
-
-    /* NAVBAR */
-
-    .nav-link {
-        margin-left: 0;
+@media (max-width: 991.98px) {
+    /* Navbar Mobile Adaptations */
+    .navbar-collapse {
+        background-color: #ffffff;
+        padding: 20px;
+        margin-top: 14px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--lavender-border);
     }
 
+    .nav-link {
+        margin: 4px 0;
+        padding: 10px 14px !important;
+    }
 
-    /* GENERAL */
+    /* Hide desktop right logos, show mobile header logos */
+    .navbar-right-logos {
+        display: none !important;
+    }
 
+    .mobile-top-logos {
+        display: flex;
+        margin-left: auto;
+        margin-right: 14px;
+    }
+
+    /* Hero section */
     .hero-section {
-        min-height: 70vh;
+        padding: 70px 0 60px;
+        text-align: center;
     }
 
     .hero-section h1 {
-        font-size: 2.7rem;
+        font-size: 2.6rem;
     }
 
-    .section {
-        padding: 60px 0;
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .section-heading h2 {
-        font-size: 2rem;
+    .hero-image-wrapper {
+        margin-top: 40px;
     }
 
+    .hero-image {
+        max-width: 280px;
+    }
 
-    /* TEAM */
-
+    /* Team Hero */
     .team-hero {
         padding: 50px 0;
     }
@@ -836,68 +1165,54 @@ body {
         gap: 20px;
     }
 
-    .team-logo {
-        width: 150px;
+    .team-logo, .team-logo-right {
+        width: 140px;
     }
 
-    .team-logo img {
-        max-height: 90px;
+    .team-logo img, .team-logo-right img {
+        max-height: 80px;
     }
 
     .team-title h1 {
         font-size: 2.3rem;
     }
 
-    .team-title p:not(.section-label) {
-        font-size: 0.95rem;
-    }
-
-
-    /* EVENTS */
-
-    .events-hero {
-        padding: 60px 20px;
-    }
-
+    /* Events */
     .events-hero h1 {
         font-size: 2.3rem;
-    }
-
-    .events-hero p:not(.section-label) {
-        font-size: 0.95rem;
-    }
-
-    .event-page-image {
-        min-height: 220px;
-    }
-
-    .event-placeholder span {
-        font-size: 1.8rem;
-    }
-
-    .event-page-content {
-        padding: 25px 20px;
     }
 
     .event-info {
         grid-template-columns: 1fr;
     }
-
-    .events-cta h2 {
-        font-size: 2.2rem;
-    }
-
-
-    /* FOOTER */
-
-    .footer-links {
-        justify-content: flex-start;
-        margin-top: 25px;
-    }
-
 }
-.bangalore-logo {
-    
-    width: 100%;
+
+@media (max-width: 768px) {
+    .section {
+        padding: 65px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .events-cta h2, .cta-section h2 {
+        font-size: 2.1rem;
+    }
+
+    .footer {
+        padding: 50px 0 25px;
+    }
+
+    .footer-social-links {
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+}
+/* JSSATEB WIE logo on About page */
+.chapter-logo {
+    width: 300px;
     height: auto;
+    object-fit: contain;
+    margin-right: 60px;
 }

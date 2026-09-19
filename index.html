@@ -4,45 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IEEE Women in Engineering (WIE) at JSS Academy of Technical Education, Bengaluru. Inspiring women and empowering engineers in technology.">
 
     <title>IEEE WIE | JSSATEB</title>
 
-    <!-- Bootstrap -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logos/wie-logo.png">
+
+    <!-- Bootstrap 5 CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
 
-    <!-- Our CSS -->
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- ================= NAVBAR ================= -->
-
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container">
 
             <a class="navbar-brand" href="index.html">
-                IEEE WIE
+                IEEE WIE <span>JSSATEB</span>
             </a>
+
+            <!-- Mobile Top Right Logos -->
+            <div class="mobile-top-logos">
+                <img src="images/logos/wie-logo.png" alt="IEEE WIE Logo">
+                <img src="images/logos/jssateb-wie.png" alt="IEEE WIE JSSATEB Logo">
+            </div>
 
             <button
                 class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMenu">
 
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link active" href="index.html">Home</a>
                     </li>
 
                     <li class="nav-item">
@@ -63,66 +81,80 @@
 
                 </ul>
 
+                <!-- Desktop Top Right Logos -->
+                <div class="navbar-right-logos d-none d-lg-flex">
+                    <a href="index.html" class="nav-logo-item" title="IEEE Women in Engineering">
+                        <img src="images/logos/wie-logo.png" alt="IEEE WIE Logo" class="nav-logo-wie">
+                    </a>
+                    <a href="index.html" class="nav-logo-item" title="IEEE WIE JSSATEB">
+                        <img src="images/logos/jssateb-wie.png" alt="IEEE WIE JSSATEB Logo" class="nav-logo-jss">
+                    </a>
+                </div>
+
             </div>
 
         </div>
     </nav>
 
 
-   <!-- ================= HERO ================= -->
+    <!-- ================= HERO ================= -->
+    <section class="hero-section">
 
-<section class="hero-section">
+        <div class="container">
 
-    <div class="container">
+            <div class="row align-items-center">
 
-        <div class="row align-items-center">
+                <!-- HERO TEXT -->
+                <div class="col-lg-7">
 
-            <!-- HERO TEXT -->
-            <div class="col-lg-7">
+                    <div class="hero-content">
 
-                <div class="hero-content">
 
-                    <p class="hero-small-text">
-                        IEEE WOMEN IN ENGINEERING
-                    </p>
+                        <h1>
+                            Inspiring Women.<br>
+                            Empowering Engineers.
+                        </h1>
 
-                    <h1>
-                        Inspiring Women.<br>
-                        Empowering Engineers.
-                    </h1>
+                        <p class="hero-description">
+                            IEEE Women in Engineering at JSS Academy of Technical Education, Bengaluru
+                            connects, inspires, and equips women in engineering and technology to lead, 
+                            innovate, and excel.
+                        </p>
 
-                    <p class="hero-description">
-                        IEEE Women in Engineering at JSSATEB
-                        connects, inspires and empowers women
-                        in engineering and technology.
-                    </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="about.html" class="primary-button">
+                                Discover Our Chapter <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="events.html" class="secondary-button" style="border-color: rgba(255,255,255,0.4); color: #ffffff;">
+                                Explore Events
+                            </a>
+                        </div>
 
-                    <a href="about.html" class="primary-button">
-                        Discover Our Chapter
-                    </a>
+                    </div>
+
+                </div>
+
+                <!-- HERO IMAGE -->
+                <div class="col-lg-5 text-center">
+
+                    <div class="hero-image-wrapper">
+                        <img
+                            src="images/general/hero-img-1.png"
+                            class="img-fluid hero-image"
+                            alt="Women in Engineering"
+                        >
+                    </div>
 
                 </div>
 
             </div>
 
-            <!-- HERO IMAGE -->
-            <div class="col-lg-5 text-center">
-
-                <img
-                    src="images/general/hero-img-1.png"
-                    class="img-fluid hero-image"
-                    alt="Women in Engineering"
-                >
-
-            </div>
-
         </div>
 
-    </div>
+    </section>
 
-</section>
+
     <!-- ================= ABOUT PREVIEW ================= -->
-
     <section class="section">
 
         <div class="container">
@@ -139,34 +171,36 @@
 
             </div>
 
-            <div class="row align-items-center">
+            <div class="row align-items-center g-5">
 
                 <div class="col-lg-6">
 
                     <p class="section-text">
-                        IEEE Women in Engineering is a global
-                        network dedicated to inspiring women
-                        and girls to pursue careers in engineering,
-                        science and technology.
+                        IEEE Women in Engineering (WIE) is a global network dedicated to inspiring women 
+                        and girls to pursue and thrive in careers in engineering, science, and technology.
                     </p>
 
                     <p class="section-text">
-                        Our student chapter at JSS Academy of
-                        Technical Education Bangalore aims to
-                        create opportunities for learning,
-                        leadership, collaboration and growth.
+                        Our student chapter at JSS Academy of Technical Education, Bengaluru fosters an 
+                        inclusive environment that provides hands-on technical workshops, professional 
+                        mentorship, leadership development, and collaboration.
                     </p>
 
                     <a href="about.html" class="secondary-button">
-                        Learn More
+                        Learn More About Us <i class="bi bi-arrow-right"></i>
                     </a>
 
                 </div>
 
                 <div class="col-lg-6">
 
-                    <div class="about-placeholder">
-                        <span>Chapter Image</span>
+                    <div class="about-showcase-card">
+                        <img
+                            src="images/general/chapter-img.png"
+                            alt="IEEE WIE JSSATEB Chapter"
+                            class="about-showcase-logo"
+                        >
+
                     </div>
 
                 </div>
@@ -179,7 +213,6 @@
 
 
     <!-- ================= WHAT WE DO ================= -->
-
     <section class="section section-light">
 
         <div class="container">
@@ -187,7 +220,7 @@
             <div class="section-heading text-center">
 
                 <p class="section-label">
-                    WHAT WE DO
+                    OUR PILLARS
                 </p>
 
                 <h2>
@@ -196,9 +229,9 @@
 
             </div>
 
-
             <div class="row g-4">
 
+                <!-- 01 Learn -->
                 <div class="col-md-4">
 
                     <div class="feature-card">
@@ -212,16 +245,15 @@
                         </h3>
 
                         <p>
-                            Workshops, technical sessions
-                            and opportunities to explore
-                            emerging technologies.
+                            Hands-on technical workshops, coding bootcamps, and interactive sessions exploring 
+                            emerging engineering domains and industry standards.
                         </p>
 
                     </div>
 
                 </div>
 
-
+                <!-- 02 Connect -->
                 <div class="col-md-4">
 
                     <div class="feature-card">
@@ -235,16 +267,15 @@
                         </h3>
 
                         <p>
-                            Build meaningful connections
-                            with peers, professionals and
-                            the wider IEEE community.
+                            Build meaningful connections with peers, industry mentors, and the wider IEEE 
+                            Bangalore Section technical community.
                         </p>
 
                     </div>
 
                 </div>
 
-
+                <!-- 03 Lead -->
                 <div class="col-md-4">
 
                     <div class="feature-card">
@@ -258,9 +289,8 @@
                         </h3>
 
                         <p>
-                            Develop leadership skills and
-                            create opportunities to contribute
-                            to the engineering community.
+                            Cultivate leadership and organizational abilities by spearheading flagship events, 
+                            ideathons, community outreach, and STEM programs.
                         </p>
 
                     </div>
@@ -274,8 +304,7 @@
     </section>
 
 
-    <!-- ================= EVENTS ================= -->
-
+    <!-- ================= EVENTS PREVIEW ================= -->
     <section class="section">
 
         <div class="container">
@@ -287,36 +316,47 @@
                 </p>
 
                 <h2>
-                    Upcoming Events
+                    Featured Events
                 </h2>
 
             </div>
 
-
             <div class="row g-4">
 
-                <div class="col-md-4">
+                <!-- IDEATHON 2026 -->
+                <div class="col-md-6">
 
-                    <div class="event-card">
+                    <div class="event-page-card">
 
-                        <div class="event-image">
-                            Event Image
+                        <div class="event-page-image" style="min-height: 200px;">
+                            <div class="event-placeholder">
+                                <span>IDEATHON</span>
+                                <small>October 2026 &bull; Flagship Event</small>
+                            </div>
                         </div>
 
-                        <div class="event-content">
+                        <div class="event-page-content">
 
-                            <p class="event-date">
-                                DATE
-                            </p>
+                            <span class="event-status">
+                                UPCOMING
+                            </span>
+
+                            <div class="event-page-date">
+                                08 OCTOBER 2026
+                            </div>
 
                             <h3>
-                                Event Name
+                                Ideathon 2026
                             </h3>
 
                             <p>
-                                Short description of the
-                                event goes here.
+                                An innovation challenge where participants brainstorm, develop creative engineering 
+                                solutions, collaborate with peers, and present ideas to solve real-world problems.
                             </p>
+
+                            <a href="events.html" class="event-button">
+                                View Event Details <i class="bi bi-arrow-right"></i>
+                            </a>
 
                         </div>
 
@@ -324,59 +364,40 @@
 
                 </div>
 
+                <!-- WORKSHOPS & TECHNICAL SESSIONS -->
+                <div class="col-md-6">
 
-                <div class="col-md-4">
+                    <div class="event-page-card">
 
-                    <div class="event-card">
-
-                        <div class="event-image">
-                            Event Image
+                        <div class="event-page-image" style="min-height: 200px;">
+                            <div class="event-placeholder">
+                                <span>WORKSHOPS</span>
+                                <small>Technical Series &bull; Hands-on</small>
+                            </div>
                         </div>
 
-                        <div class="event-content">
+                        <div class="event-page-content">
 
-                            <p class="event-date">
-                                DATE
-                            </p>
+                            <span class="event-status">
+                                COMING SOON
+                            </span>
+
+                            <div class="event-page-date">
+                                ACADEMIC YEAR 2026
+                            </div>
 
                             <h3>
-                                Event Name
+                                Technical Workshops & Talks
                             </h3>
 
                             <p>
-                                Short description of the
-                                event goes here.
+                                Skill-development sessions, guest lectures by women technologists, and interactive 
+                                practical bootcamps scheduled throughout the semester.
                             </p>
 
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="col-md-4">
-
-                    <div class="event-card">
-
-                        <div class="event-image">
-                            Event Image
-                        </div>
-
-                        <div class="event-content">
-
-                            <p class="event-date">
-                                DATE
-                            </p>
-
-                            <h3>
-                                Event Name
-                            </h3>
-
-                            <p>
-                                Short description of the
-                                event goes here.
-                            </p>
+                            <a href="events.html" class="event-button">
+                                Explore Calendar <i class="bi bi-arrow-right"></i>
+                            </a>
 
                         </div>
 
@@ -386,13 +407,10 @@
 
             </div>
 
-
             <div class="center-button">
-
                 <a href="events.html" class="secondary-button">
-                    View All Events
+                    View All Events <i class="bi bi-arrow-right"></i>
                 </a>
-
             </div>
 
         </div>
@@ -401,7 +419,6 @@
 
 
     <!-- ================= TEAM PREVIEW ================= -->
-
     <section class="section section-light">
 
         <div class="container">
@@ -409,7 +426,7 @@
             <div class="section-heading text-center">
 
                 <p class="section-label">
-                    OUR PEOPLE
+                    OUR LEADERSHIP
                 </p>
 
                 <h2>
@@ -418,80 +435,65 @@
 
             </div>
 
-
             <div class="row g-4">
 
+                <!-- Dr. B Gayathri Kamath -->
                 <div class="col-md-4">
+                    <div class="team-member-card">
 
-                    <div class="member-card">
-
-                        <div class="member-image">
-                            Photo
+                        <div class="member-photo">
+                            <img
+                                src="images/members/gayathri-kamath.jpeg"
+                                alt="Dr. B Gayathri Kamath"
+                            >
                         </div>
 
-                        <h3>
-                            Name
-                        </h3>
-
-                        <p>
-                            Position
-                        </p>
+                        <h3>Dr. B Gayathri Kamath</h3>
+                        <p>Faculty Advisor</p>
 
                     </div>
-
                 </div>
 
-
+                <!-- Ms. Kruthika D -->
                 <div class="col-md-4">
+                    <div class="team-member-card">
 
-                    <div class="member-card">
-
-                        <div class="member-image">
-                            Photo
+                        <div class="member-photo">
+                            <img
+                                src="images/members/kruthika-d.jpeg"
+                                alt="Ms. Kruthika D"
+                            >
                         </div>
 
-                        <h3>
-                            Name
-                        </h3>
-
-                        <p>
-                            Position
-                        </p>
+                        <h3>Ms. Kruthika D</h3>
+                        <p>Chair IEEE WIE</p>
 
                     </div>
-
                 </div>
 
-
+                <!-- Ms. Shraddha Baidya -->
                 <div class="col-md-4">
+                    <div class="team-member-card">
 
-                    <div class="member-card">
-
-                        <div class="member-image">
-                            Photo
+                        <div class="member-photo">
+                            <img
+                                src="images/members/shraddha-baidya.jpeg"
+                                alt="Ms. Shraddha Baidya"
+                            >
                         </div>
 
-                        <h3>
-                            Name
-                        </h3>
-
-                        <p>
-                            Position
-                        </p>
+                        <h3>Ms. Shraddha Baidya</h3>
+                        <p>Vice Chair IEEE WIE</p>
 
                     </div>
-
                 </div>
 
             </div>
 
-
             <div class="center-button">
-
                 <a href="team.html" class="secondary-button">
-                    Meet the Full Team
+                    Meet the Full Team <i class="bi bi-arrow-right"></i>
                 </a>
-
             </div>
 
         </div>
@@ -500,7 +502,6 @@
 
 
     <!-- ================= CONTACT CTA ================= -->
-
     <section class="cta-section">
 
         <div class="container text-center">
@@ -514,12 +515,11 @@
             </h2>
 
             <p>
-                Follow our journey and stay updated
-                with our latest activities.
+                Follow our journey, attend our events, and stay updated with our latest activities.
             </p>
 
             <a href="contact.html" class="primary-button">
-                Get in Touch
+                Get in Touch <i class="bi bi-arrow-right"></i>
             </a>
 
         </div>
@@ -528,46 +528,45 @@
 
 
     <!-- ================= FOOTER ================= -->
-
     <footer class="footer">
-
         <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-6">
-
-                    <h3>
-                        IEEE WIE
-                    </h3>
-
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <h3>IEEE WIE JSSATEB</h3>
                     <p>
-                        JSS Academy of Technical Education,
-                        Bangalore.
+                        Connecting, inspiring, and empowering women in engineering and technology at JSS Academy of Technical Education, Bengaluru.
                     </p>
-
                 </div>
-
-
-                <div class="col-md-6 footer-links">
-
-                    <a href="#">Instagram</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Email</a>
-
+                <div class="col-lg-4">
+                    <div class="footer-nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="team.html">Our Team</a>
+                        <a href="events.html">Events</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
                 </div>
-
+                <div class="col-lg-3 text-lg-end">
+                    <div class="footer-social-links justify-content-lg-end">
+                        <a href="https://www.instagram.com/ieee_wie.studentchapter?stkn=MXBwcW1ma2NjZTVwMA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/ieee-wie-student-chapter/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" aria-label="Email" title="Email coming soon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-
-
             <hr>
-
-            <p class="copyright">
-                © 2026 IEEE WIE JSSATEB. All rights reserved.
-            </p>
-
+            <div class="text-center">
+                <p class="copyright">
+                    &copy; 2026 IEEE WIE JSSATEB. All rights reserved.
+                </p>
+            </div>
         </div>
-
     </footer>
 
 
@@ -576,7 +575,7 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
 
-    <!-- Our JS -->
+    <!-- Main JS -->
     <script src="js/script.js"></script>
 
 </body>

@@ -4,13 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover upcoming events, technical workshops, Ideathons, and student competitions organized by IEEE Women in Engineering at JSSATEB.">
 
     <title>Events | IEEE WIE JSSATEB</title>
 
-    <!-- Bootstrap -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logos/wie-logo.png">
+
+    <!-- Bootstrap 5 CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     >
 
     <!-- Main CSS -->
@@ -19,318 +29,193 @@
 
 <body>
 
-<!-- =========================
-     NAVBAR
-========================= -->
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
 
-<nav class="navbar navbar-expand-lg custom-navbar">
+            <a class="navbar-brand" href="index.html">
+                IEEE WIE <span>JSSATEB</span>
+            </a>
 
-    <div class="container">
+            <!-- Mobile Top Right Logos -->
+            <div class="mobile-top-logos">
+                <img src="images/logos/wie-logo.png" alt="IEEE WIE Logo">
+                <img src="images/logos/jssateb-wie.png" alt="IEEE WIE JSSATEB Logo">
+            </div>
 
-        <a class="navbar-brand" href="index.html">
-            IEEE WIE JSSATEB
-        </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
 
-            <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        Home
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Our Team</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+                <!-- Desktop Top Right Logos -->
+                <div class="navbar-right-logos d-none d-lg-flex">
+                    <a href="index.html" class="nav-logo-item" title="IEEE Women in Engineering">
+                        <img src="images/logos/wie-logo.png" alt="IEEE WIE Logo" class="nav-logo-wie">
                     </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">
-                        About
+                    <a href="index.html" class="nav-logo-item" title="IEEE WIE JSSATEB">
+                        <img src="images/logos/jssateb-wie.png" alt="IEEE WIE JSSATEB Logo" class="nav-logo-jss">
                     </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="team.html">
-                        Our Team
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="events.html">
-                        Events
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-<!-- =========================
-     EVENTS HERO
-========================= -->
-
-<section class="events-hero">
-
-    <div class="container">
-
-        <div class="events-hero-content">
-
-            <p class="section-label">
-                IEEE WIE JSSATEB
-            </p>
-
-            <h1>
-                Events & Activities
-            </h1>
-
-            <p>
-                Discover upcoming events, workshops, competitions and
-                activities organised by IEEE Women in Engineering.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     UPCOMING EVENTS
-========================= -->
-
-<section class="events-section py-5">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <p class="section-label">
-                COMING SOON
-            </p>
-
-            <h2>
-                Upcoming Events
-            </h2>
-
-            <p>
-                Stay updated with our upcoming activities and initiatives.
-            </p>
-
-        </div>
-
-
-        <div class="row justify-content-center g-4">
-
-
-            <!-- IDEATHON -->
-
-            <div class="col-md-8 col-lg-6">
-
-                <div class="event-page-card">
-
-                    <div class="event-page-image">
-
-                        <div class="event-placeholder">
-
-                            <span>
-                                IDEATHON
-                            </span>
-
-                            <small>
-                                Event Poster Coming Soon
-                            </small>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="event-page-content">
-
-                        <span class="event-status">
-                            UPCOMING
-                        </span>
-
-                        <div class="event-page-date">
-                            08 OCTOBER 2026
-                        </div>
-
-                        <h3>
-                            Ideathon
-                        </h3>
-
-                        <p>
-                            An idea-driven event where participants can
-                            explore innovative solutions, collaborate with
-                            peers and present creative concepts.
-                        </p>
-
-                        <div class="event-info">
-
-                            <div>
-                                <strong>Date</strong>
-                                <br>
-                                8 October 2026
-                            </div>
-
-                            <div>
-                                <strong>Details</strong>
-                                <br>
-                                To be announced
-                            </div>
-
-                        </div>
-
-                        <a
-                            href="#"
-                            class="event-button"
-                        >
-                            Details Coming Soon
-                        </a>
-
-                    </div>
-
                 </div>
 
             </div>
 
         </div>
-
-    </div>
-
-</section>
+    </nav>
 
 
-<!-- =========================
-     PAST EVENTS
-========================= -->
+    <!-- ================= EVENTS HERO ================= -->
+    <section class="events-hero">
 
-<section class="past-events-section py-5">
+        <div class="container">
 
-    <div class="container">
+            <div class="events-hero-content">
 
-        <div class="text-center mb-5">
-
-            <p class="section-label">
-                OUR ACTIVITIES
-            </p>
-
-            <h2>
-                Past Events
-            </h2>
-
-            <p>
-                Event highlights and activities will be added here.
-            </p>
-
-        </div>
-
-
-        <div class="empty-events">
-
-            <div class="empty-events-icon">
-                +
-            </div>
-
-            <h3>
-                More Events Coming Soon
-            </h3>
-
-            <p>
-                Past event details, photographs and highlights
-                will be added as they become available.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="events-cta">
-
-    <div class="container text-center">
-
-        <p class="section-label">
-            STAY CONNECTED
-        </p>
-
-        <h2>
-            Be Part of Our Events
-        </h2>
-
-        <p>
-            Follow IEEE WIE JSSATEB for updates about upcoming
-            events and activities.
-        </p>
-
-        <a
-            href="contact.html"
-            class="primary-button"
-        >
-            Contact Us
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-6">
-
-                <h3>
+                <p class="section-label">
                     IEEE WIE JSSATEB
-                </h3>
+                </p>
+
+                <h1>
+                    Events & Activities
+                </h1>
 
                 <p>
-                    Empowering women in engineering and technology.
+                    Discover upcoming technical workshops, ideathons, panel discussions, and collaborative 
+                    activities organized by IEEE Women in Engineering at JSSATEB.
                 </p>
 
             </div>
 
-            <div class="col-md-6">
+        </div>
 
-                <div class="footer-links">
+    </section>
 
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="team.html">Our Team</a>
-                    <a href="events.html">Events</a>
-                    <a href="contact.html">Contact</a>
+
+    <!-- ================= UPCOMING EVENTS ================= -->
+    <section class="events-section py-5">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <p class="section-label">
+                    COMING SOON
+                </p>
+
+                <h2>
+                    Upcoming Events
+                </h2>
+
+                <p class="section-text" style="max-width: 600px; margin: 0 auto;">
+                    Stay updated with our upcoming activities and student initiatives.
+                </p>
+
+            </div>
+
+
+            <div class="row justify-content-center g-4">
+
+                <!-- IDEATHON CARD -->
+                <div class="col-md-8 col-lg-6">
+
+                    <div class="event-page-card">
+
+                        <div class="event-page-image">
+
+                            <div class="event-placeholder">
+
+                                <span>
+                                    IDEATHON
+                                </span>
+
+                                <small>
+                                    Official Event Poster Coming Soon
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="event-page-content">
+
+                            <span class="event-status">
+                                UPCOMING
+                            </span>
+
+                            <div class="event-page-date">
+                                08 OCTOBER 2026
+                            </div>
+
+                            <h3>
+                                Ideathon 2026
+                            </h3>
+
+                            <p>
+                                An idea-driven innovation challenge where participants brainstorm, 
+                                explore creative engineering solutions, collaborate with peers, 
+                                and present ideas to solve real-world problems.
+                            </p>
+
+                            <div class="event-info">
+
+                                <div>
+                                    <strong>Date</strong>
+                                    <br>
+                                    8 October 2026
+                                </div>
+
+                                <div>
+                                    <strong>Details</strong>
+                                    <br>
+                                    Registration Opening Soon
+                                </div>
+
+                            </div>
+
+                            <a
+                                href="contact.html"
+                                class="event-button"
+                            >
+                                Contact for Details
+                            </a>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -338,24 +223,133 @@
 
         </div>
 
-        <hr>
-
-        <p class="copyright mb-0">
-            © 2026 IEEE WIE JSSATEB. All rights reserved.
-        </p>
-
-    </div>
-
-</footer>
+    </section>
 
 
-<!-- Bootstrap JS -->
+    <!-- ================= PAST EVENTS ================= -->
+    <section class="past-events-section py-5">
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
+        <div class="container">
 
-<script src="js/script.js"></script>
+            <div class="text-center mb-5">
+
+                <p class="section-label">
+                    OUR ACTIVITIES
+                </p>
+
+                <h2>
+                    Past Events
+                </h2>
+
+                <p class="section-text" style="max-width: 600px; margin: 0 auto;">
+                    Event highlights and activities will be showcased here.
+                </p>
+
+            </div>
+
+
+            <div class="empty-events">
+
+                <div class="empty-events-icon">
+                    <i class="bi bi-calendar-event"></i>
+                </div>
+
+                <h3>
+                    More Events Coming Soon
+                </h3>
+
+                <p>
+                    Past event highlights, gallery photographs, and guest speaker sessions 
+                    will be updated as new activities conclude.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+    <section class="events-cta">
+
+        <div class="container text-center">
+
+            <p class="section-label">
+                STAY CONNECTED
+            </p>
+
+            <h2>
+                Be Part of Our Next Event
+            </h2>
+
+            <p>
+                Follow IEEE WIE JSSATEB on social media for early registration announcements, 
+                speaker reveals, and competition updates.
+            </p>
+
+            <a
+                href="contact.html"
+                class="primary-button"
+            >
+                Get in Touch
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5">
+                    <h3>IEEE WIE JSSATEB</h3>
+                    <p>
+                        Connecting, inspiring, and empowering women in engineering and technology at JSS Academy of Technical Education, Bengaluru.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-nav-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="team.html">Our Team</a>
+                        <a href="events.html">Events</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-lg-end">
+                    <div class="footer-social-links justify-content-lg-end">
+                        <a href="https://www.instagram.com/ieee_wie.studentchapter?stkn=MXBwcW1ma2NjZTVwMA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/ieee-wie-student-chapter/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" aria-label="Email" title="Email coming soon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="copyright">
+                    &copy; 2026 IEEE WIE JSSATEB. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Main JS -->
+    <script src="js/script.js"></script>
 
 </body>
 
