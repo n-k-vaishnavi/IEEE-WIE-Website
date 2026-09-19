@@ -56,11 +56,16 @@ body {
 ========================= */
 
 .hero-section {
-    min-height: 80vh;
+    padding: 90px 0;
     display: flex;
     align-items: center;
     background-color: #2b1725;
     color: white;
+}
+.hero-image {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
 }
 
 
@@ -347,4 +352,9 @@ body {
         margin-top: 25px;
     }
 
+}
+.bangalore-logo {
+    
+    width: 100%;
+    height: auto;
 }
